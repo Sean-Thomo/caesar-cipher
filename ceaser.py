@@ -1,10 +1,21 @@
 def get_user_input():
-		user_input = input("Enter Text: ")
+		plaintext = input("Enter Text: ")
+		return plaintext
   
   
-def decrypt():
+def get_key():
+  key = input("Enter Key: ")
+  return key
+
+
+def cipher(plaintext, key):
   pass
+
+def encrypt():
+  plaintext = get_user_input()
+  key = get_key()
+  cipher(plaintext, key)
 
 
 if __name__ == "__main__":
-	decrypt()
+	encrypt()
