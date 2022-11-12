@@ -12,6 +12,12 @@ def get_key():
   return key
 
 
+def get_function():
+  desired_func = input("Do you want to encrypt or decrypt? [encrypt/decrypt]: ")
+  
+  return desired_func
+
+
 def encrypt(plaintext, key):
   result = ""
   alphabet = string.ascii_lowercase
@@ -43,9 +49,13 @@ def decrypt(plaintext, key):
 def run_encryption():
   plaintext = get_user_input()
   key = get_key()
-  print(encrypt(plaintext, key))
+  desired_function = desired_function()
+  
+  if desired_function == "encrypt":
+    print(encrypt(plaintext, key))
+  elif desired_function == "decrypt":
+    print(decrypt(plaintext, key))
 
 
 if __name__ == "__main__":
 	run_encryption()
-# qrvhdfdghpb
