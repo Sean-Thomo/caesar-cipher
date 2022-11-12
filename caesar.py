@@ -58,6 +58,8 @@ def run_encryption():
     print(encrypt(plaintext, key))
   elif desired_function == "de":
     print(decrypt(plaintext, key))
+  else:
+    print("Please choose between [en/de]: ")
 
 
 if __name__ == "__main__":
