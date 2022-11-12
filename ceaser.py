@@ -49,7 +49,7 @@ def decrypt(plaintext, key):
 def run_encryption():
   plaintext = get_user_input()
   key = get_key()
-  desired_function = desired_function()
+  desired_function = get_function()
   
   if desired_function == "encrypt":
     print(encrypt(plaintext, key))
