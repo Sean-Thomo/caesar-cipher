@@ -2,31 +2,35 @@ import string
 
 def get_user_input():
 	plaintext = input("Enter Text: ")
+
 	return plaintext
 
 
 def get_key():
   key = int(input("Enter Key: "))
+
   return key
 
 
-def cipher(plaintext, key):
-  cipher_text = ""
+def encrypt(plaintext, key):
+  result = ""
   alphabet = string.ascii_lowercase
-  shifted_alphabet = string.ascii_lowercase[key:] + string.ascii_lowercase[0:key]
-  key_value_alphabet = {key: value for key, value in zip(alphabet, shifted_alphabet)}
   for i in plaintext:
-    cipher_char = key_value_alphabet[i]
-    cipher_text += cipher_char
+    if i in alphabet:
+      letter_index = (alphabet.find(i) + key) % len(alphabet)
 
-  print(cipher_text)
+      result += alphabet[letter_index]
 
 
-def encrypt():
+  return result
+
+
+def run_encryption():
   plaintext = get_user_input()
   key = get_key()
-  cipher(plaintext, key)
+  print(encrypt(plaintext, key))
 
 
 if __name__ == "__main__":
-	encrypt()
+	run_encryption()
+# qrvhdfdghpb
