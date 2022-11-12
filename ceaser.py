@@ -7,13 +7,16 @@ def get_user_input():
 
 
 def get_key():
-  key = int(input("Enter Key: "))
-
-  return key
+  try:
+    key = int(input("Enter Key: "))
+    return key
+  except ValueError:
+    print("Key should be a number:")
+    get_key()
 
 
 def get_function():
-  desired_func = input("Do you want to encrypt or decrypt? [encrypt/decrypt]: ")
+  desired_func = input("Do you want to encrypt or decrypt? [en/de]: ")
   
   return desired_func
 
@@ -51,9 +54,9 @@ def run_encryption():
   key = get_key()
   desired_function = get_function()
   
-  if desired_function == "encrypt":
+  if desired_function == "en":
     print(encrypt(plaintext, key))
-  elif desired_function == "decrypt":
+  elif desired_function == "de":
     print(decrypt(plaintext, key))
 
 
