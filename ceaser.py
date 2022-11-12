@@ -20,7 +20,8 @@ def encrypt(plaintext, key):
       letter_index = (alphabet.find(i) + key) % len(alphabet)
 
       result += alphabet[letter_index]
-
+    else:
+      result += i
 
   return result
 
