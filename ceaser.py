@@ -26,6 +26,20 @@ def encrypt(plaintext, key):
   return result
 
 
+def decrypt(plaintext, key):
+  result = ""
+  alphabet = string.ascii_lowercase
+  for i in plaintext:
+    if i in alphabet:
+      letter_index = (alphabet.find(i) - key) % len(alphabet)
+
+      result += alphabet[letter_index]
+    else:
+      result += i
+
+  return result
+
+
 def run_encryption():
   plaintext = get_user_input()
   key = get_key()
